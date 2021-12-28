@@ -1,0 +1,101 @@
+@use 'abstracts' as *;
+@use './foundation-sites/scss/foundation' as app;
+
+/*--------------------------------------------------------------
+Team Bio Cards
+----------------------------------------------------------------*/
+.tb-card-cell {
+	display: flex;
+	@include app.xy-cell(12, $gutter-type: none);
+	padding-left: app.rem-calc(15);
+	padding-right: app.rem-calc(15);
+
+	@include app.breakpoint(medium) {
+		@include app.xy-cell(6, $gutter-type: none);
+		padding-left: app.rem-calc(20);
+		padding-right: app.rem-calc(20);
+	}
+
+	@include app.breakpoint(large) {
+		@include app.xy-cell(1/3, $gutter-type: none);
+	}
+}
+
+.tb-card {
+	@include app.card-container($background: $white, $color: $black-400, $margin: app.rem-calc(30), $border: none, $shadow: $default-box-shadow);
+}
+
+.tb-card-section {
+	display: flex;
+	flex-direction: column;
+	@include app.card-section;
+	padding: app.rem-calc(30 20);
+
+	@include app.breakpoint(xlarge) {
+		padding: app.rem-calc(30 40);
+	}
+}
+
+.tb-card-name {
+	font-size: app.rem-calc(22);
+	color: $black-400;
+	margin-top: app.rem-calc(15);
+	margin-bottom: app.rem-calc(10);
+	line-height: 1.2;
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.tb-card-title {
+	color: $black-400;
+	font-weight: 700;
+}
+
+.tb-card-title + .tb-card-link {
+	margin-top: app.rem-calc(20);
+}
+
+.tb-card-link {
+	font-size: app.rem-calc(16);
+}
+
+.tb-image {
+	@include app.xy-cell(12);
+
+	img {
+		width: 100%;
+	}
+
+	@include app.breakpoint(medium) {
+		@include app.xy-cell(25%);
+	}
+}
+
+.tb-info {
+	@include app.xy-cell(12);
+
+	@include app.breakpoint(medium) {
+		@include app.xy-cell(70%);
+	}
+
+	.btn {
+		margin-top: app.rem-calc(20);
+		font-size: app.rem-calc(16);
+	}
+
+}
+
+.team-bio-reveal {
+	background-color: $white;
+	padding: 4rem .75rem;
+
+	.close-button {
+		color: $black-400;
+	}
+}

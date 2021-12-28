@@ -1,0 +1,96 @@
+@import './app/foundation-app';
+@import './base/';
+@import './components';
+@import './layout';
+@import './pages';
+@import './utilities';
+
+body { 
+	font-size: 18px;
+}
+
+p {
+	font-size: 18px;
+}
+
+ul {
+	margin-right: 1.25rem;
+}
+// ACF Editor Fixes
+
+body.acf-browser-firefox .acf-field select {
+	padding: 0.5em;
+}
+
+.acf-color-picker {
+	.wp-color-result.button {
+		text-transform: capitalize;
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		vertical-align: top;
+		letter-spacing: unset;
+		border-width: 1px;
+		border-style: solid;
+		border-color: #7e8993;
+		white-space: nowrap;
+		border-radius: 3px;
+		box-sizing: border-box;
+	}
+
+	input[type=text].wp-color-picker {
+		display: inline-block;
+		border-radius: 4px;
+		border: 1px solid #8c8f94;
+		height: auto;
+	}
+
+	input.wp-picker-clear {
+		margin-bottom: 0;
+		border-radius: 3px;
+	}
+
+	.wp-picker-holder {
+		box-sizing: unset;
+	}
+}
+
+.wp-editor-tabs {
+	.wp-switch-editor {
+		font-size: 13px;
+		padding: 3px 8px 4px;
+		margin: 5px 0 0 5px;
+		height: 20px;
+		border: 1px solid #dcdcde;
+		line-height: 1.5;
+		cursor: pointer;
+	}
+}
+
+.wp-core-ui {
+	.button, .button-secondary {
+		color: #2271b1;
+		border-color: #2271b1;
+		background: #f6f7f7;
+		border-radius: 3px;
+		font-size: 13px;
+		text-transform: unset;
+	}
+
+	.quicktags-toolbar {	
+		padding: 3px;
+		input.button.button-small {
+			border-radius: 3px;
+		}
+	} 
+}
+	
+
+.wp-picker-input-wrap label {
+	display: inline-block;
+	font-size: 13px;
+	line-height: 1.4em;
+}
+
+.mce-content-body {
+	padding: 0.5rem 1rem;
+}

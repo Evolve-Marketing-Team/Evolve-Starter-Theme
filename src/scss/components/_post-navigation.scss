@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+@use '../app' as *;
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Site Post Navigation
+----------------------------------------------------------------*/
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+  	margin: 0 auto;
+	max-width: $default-content-width;
+	padding-top: rem-calc(30);
+	padding-bottom: rem-calc(30);
+	padding-left: $desktop-lr-padding;
+	padding-right: $desktop-lr-padding;
+}
+
+.nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	width: 50%;
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}

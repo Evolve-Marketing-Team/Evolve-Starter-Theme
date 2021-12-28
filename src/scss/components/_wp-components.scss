@@ -1,0 +1,14 @@
+@use 'abstracts' as *;
+
+/*----------Setup the color scheme for buttons, backgrounds, and text color ----*/
+
+@each $name, $color in $colors {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}

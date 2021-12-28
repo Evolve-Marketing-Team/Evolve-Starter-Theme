@@ -1,0 +1,64 @@
+@use 'abstracts' as *;
+@use './foundation-sites/scss/foundation' as app;
+
+/*--------------------------------------------------------------
+Media Content
+----------------------------------------------------------------*/
+.media-content {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas: 
+	"media media"
+	"content content";
+
+
+	@include app.breakpoint(large) {
+		grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+		grid-column-gap: 3rem;
+		grid-template-areas: 
+		"media content";
+	}
+}
+
+.media-content__media, .media-content__content {
+	display: flex;
+	justify-content: center;
+}
+
+.media-content__media {
+	.responsive-embed.widescreen {
+		width: 100%;
+	}
+}
+
+.media-content__content {
+
+
+	.media-content__container {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+
+
+	h2 {
+		margin-top: rem-calc(35);
+		
+
+		@include app.breakpoint(large) {
+			margin-top: 0;
+			font-size: rem-calc(40);
+		}
+
+		@include app.breakpoint(xlarge) {
+			font-size: rem-calc(45);
+		}
+	}
+
+	p {
+		line-height: 1.8;
+	}
+
+	.btn {
+		margin-top: rem-calc(46);
+	}
+}

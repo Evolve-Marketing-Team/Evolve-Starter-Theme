@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+@use '../app' as *;
+
+
+nav.page-navigation {
+	margin-top: 1rem;
+	text-align: center;
+
+	ul.page-numbers {
+		display: flex;
+		justify-content: space-evenly;
+		text-align: center;
+		list-style: none;
+		margin-left: 0;
+
+		@include breakpoint(medium) {
+			justify-content: center;
+		}
+
+		li {
+			padding-left: rem-calc(5);
+			padding-right: rem-calc(5);
+
+			@include breakpoint(medium) {
+				padding-left: rem-calc(10);
+				padding-right: rem-calc(10);
+			}
+
+			span.page-numbers.current {
+				background-color: $black-400;
+				padding: 0.2em 0.5em;
+				border-radius: 50%;
+				color: $white;
+			}
+		}
+	}
+}

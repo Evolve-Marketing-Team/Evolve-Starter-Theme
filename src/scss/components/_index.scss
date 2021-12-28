@@ -1,0 +1,9 @@
+/*-------------------------------------------------------------------
+Components Index: Forward all partials within Components to be used
+in other partials as a single @use. Example: @use 'abtracts' as *;
+-------------------------------------------------------------------*/
+@forward 'hamburger-settings';
+@forward 'buttons';
+@forward 'pagination';
+@forward 'post-navigation';
+@forward 'slick-theme';

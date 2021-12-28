@@ -1,0 +1,67 @@
+@use 'abstracts' as *;
+@use './foundation-sites/scss/foundation' as app;
+/*--------------------------------------------------------------
+# Simple CTA
+--------------------------------------------------------------*/
+.simple-cta {
+	.cta-content-container {
+		padding-left: $mobile-lr-padding;
+		padding-right: $mobile-lr-padding;
+
+		@include app.breakpoint(medium) {
+			padding-left: app.rem-calc(50);
+			padding-right: app.rem-calc(50);
+		}
+
+		@include app.breakpoint(xlarge) {
+			padding-left: app.rem-calc(130);
+			padding-right: app.rem-calc(130);
+		}
+	}
+
+	.cta-content {
+		@include app.xy-cell(12);
+		font-weight: 700;
+		font-size: app.rem-calc(25);
+		line-height: 1.32;
+
+		@include app.breakpoint(medium) {
+			font-size: app.rem-calc(30);
+		}
+
+		@include app.breakpoint(large) {
+			@include app.xy-cell(70%);
+			padding-right: app.rem-calc(60);
+
+			p {
+				margin-bottom: 0;
+				line-height: inherit;
+			}
+		}
+
+		@include app.breakpoint(xlarge) {
+			font-size: app.rem-calc(35);
+		}
+	}
+
+	.cta-content {
+		a {
+			color: inherit;
+		}
+	}
+
+	.cta-btn {
+		margin-top: app.rem-calc(20);
+		
+
+		a.btn {
+			margin-bottom: 0;
+		}
+
+		@include app.breakpoint(large) {
+			margin-top: 0;
+			padding-left: app.rem-calc(60);
+
+		}
+	}
+}

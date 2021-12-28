@@ -1,0 +1,82 @@
+@use 'foundation-sites/scss/util/util' as *;
+@use '../abstracts' as *;
+
+body {
+	font-size: 16px;
+}
+
+address {
+	font-style: normal;
+}
+
+h2 {
+	margin-bottom: rem-calc(30);
+}
+
+.h2-large {
+	font-size: rem-calc(30);
+	margin-bottom: rem-calc(30);
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(45);
+		margin-bottom: rem-calc(40);
+	}
+}
+
+h4, h5, h6 {
+	margin-bottom: 1rem;
+}
+
+p + ul {
+	margin-top: 2rem;
+}
+
+p + h2, p + h3, p + h4, p + h5, p + h6 {
+	margin-top: rem-calc(35);
+}
+
+ul, ol {
+
+	li {
+		padding-bottom: rem-calc(12);
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+ul {
+	li {
+
+		// Change color below or delete out if different color for bullet is not required. 
+		&::marker {
+			color: inherit;
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+ol {
+	li {
+		// Change color below or delete if different color for bullet is not required. 
+		&::marker {
+			color: inherit;
+		}
+	}
+}
+
+.two-column-list {
+	li {
+		padding-left: rem-calc(10);
+		padding-right: rem-calc(10);
+	}
+
+	@include breakpoint(medium) {
+		columns: 2;
+		column-gap: 2rem;
+	}
+}

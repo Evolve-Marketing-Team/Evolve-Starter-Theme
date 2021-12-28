@@ -1,0 +1,114 @@
+@use '../abstracts' as *;
+@use '../app' as *;
+
+[type=file], [type=checkbox], [type=radio] {
+	margin: 0;
+}
+
+
+select {
+	background-size: 11px 8px;
+}
+
+/* Gravity Forms Fix for Select Dropdown Arrow */
+body { 
+	.gform_wrapper.gf_browser_chrome, .gform_wrapper.gf_browser_gecko {
+		select {
+			padding: 0 1.5rem 0 1rem;
+		}
+	}
+}
+
+.gform_wrapper.gravity-theme {
+
+	.footer-enews-signup {
+		width: 100%;
+		justify-content: center;
+		margin-top: 0;
+		margin-bottom: 0;
+
+
+		input[type=email], input[type=text] {
+			height: rem-calc(54);
+			border-radius: 0;
+			padding: rem-calc(15 20);
+			border: 0;
+			box-shadow: none;
+
+			&::placeholder {
+				font-size: rem-calc(18);
+				font-weight: 200;
+				color: $gray-600;
+			}
+		}
+
+		.gform_body {
+			width: 100%;
+			font-size: rem-calc(18);
+
+			@include breakpoint(medium) {
+				width: 40%;
+			}
+
+			@include breakpoint(xlarge) {
+				width: 100%;
+			}
+		}
+
+		.gform_footer {
+			display: flex;
+			flex: 0 0 auto;
+			margin: 0;
+			padding: 0;
+			font-size: rem-calc(18);
+			text-align: center;
+
+			@include breakpoint(medium) {
+				margin: 0;
+				text-align: left;
+			}
+
+			.gform_button {
+				position: relative;
+				background-color: $white;
+				font-weight: 500;
+				color: $gray-600;
+				text-transform: uppercase;
+				line-height: 1;
+				letter-spacing: 0.1em;
+				border: 0;
+				padding-left: 1rem;
+				padding-right: 1rem;
+				margin-bottom: 0;
+				cursor: pointer;
+
+				&:after {
+					content: "";
+					display: block;
+					width: calc(100% - 2rem);
+					height: 1px;
+					background-color: $black-400;
+					position: absolute;
+					bottom: 0.75rem;
+					left: 50%;
+					transform: scale(1,1) translateX(-50%); transform-origin: 15%;
+					transition: transform $ease-io-fast;
+				}
+
+					
+				&:hover, &:focus {
+					color: $black-400;
+
+					&:after {
+						transform: scale(0,1) translateX(-100%);
+					}
+				}
+			}
+		}	
+
+		@include breakpoint(xlarge) {
+			max-width: rem-calc(360);
+		}
+	}
+
+}

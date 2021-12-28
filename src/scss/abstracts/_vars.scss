@@ -1,0 +1,51 @@
+@use 'foundation-sites/scss/util/util' as *;
+@use 'colors' as *;
+
+// Content Widths
+$narrow-content-width: rem-calc(640);
+$default-content-width: rem-calc(840);
+$wide-content-width: rem-calc(1100);
+
+// Container Padding (left/right)
+$container-desktop-lr-padding: rem-calc(40);
+$container-mobile-lr-padding: rem-calc(20);
+
+$desktop-lr-padding: rem-calc(20);
+$mobile-lr-padding: rem-calc(10);
+
+// Section Padding
+$section-padding__xs: rem-calc(40);
+$section-padding__sm: rem-calc(60);
+$section-padding__md: rem-calc(70);
+$section-padding__lg: rem-calc(90);
+$section-padding__xl: rem-calc(130);
+
+
+// Ease
+$ease-normal: 0.5s ease;
+$ease-slow: 0.75s ease;
+$ease-fast: 0.35s ease;
+
+// Ease In Out
+$ease-io-normal: 0.5s ease-in-out;
+$ease-io-slow: 0.75s ease-in-out;
+$ease-io-fast: 0.35s ease-in-out;
+
+// Cubic
+$cubic-normal: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$cubic-slow: 0.75s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$cubic-fast: 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+
+// Z-index
+$z-behind-content: 1;
+$z-content: 2;
+$z-above-content: 3;
+$z-overall: 8888;
+$z-super-overall: 9999;
+
+// Box Shadow
+$default-box-shadow: 6px 0px 12px rgba($black-400, 0.15);
+
+// Icon Font
+$icon-font: "cgfs";

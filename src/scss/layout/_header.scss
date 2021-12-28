@@ -1,0 +1,74 @@
+@use 'abstracts' as *;
+@use 'app' as *;
+/*----------------
+1. Site Header
+----------------*/
+.site-header {
+	background-color: $white;
+}
+
+.site-header-row {
+	@include xy-grid;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: rem-calc(15 10);
+	position: relative;
+
+	@include breakpoint(xlarge) {
+		padding: rem-calc(15 40);
+	}
+}
+
+/*----------------
+2. Branding
+----------------*/
+.site-branding {
+	display: flex;
+	align-items: center;
+
+	.custom-logo-link {
+		width: rem-calc(200);
+
+		@include breakpoint(medium) {
+			width: rem-calc(220);
+		}
+
+		@include breakpoint(xlarge) {
+			width: rem-calc(240);
+		}
+	}
+}
+
+.custom-logo-link {
+	display: block;
+}
+
+/*-------------------
+4. Navigation Menu
+-------------------*/
+
+/*--------------------
+5. Header Message Bar
+---------------------*/
+.header-message-bar {
+    background-color: $black-400;
+    padding-top: rem-calc(10);
+    padding-bottom: rem-calc(10);
+
+    p {
+        margin-bottom: 0;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+	a {
+		color: $white;
+	}
+}
+
+.header-message-row {
+    @include xy-grid;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,58 @@
+@use 'abstracts' as *;
+@use './foundation-sites/scss/foundation' as app;
+/*--------------------------------------------------------------
+# Accordions
+--------------------------------------------------------------*/
+.accordion {
+	width: 100%;
+}
+
+.accordion-item {
+	border-bottom: 1px solid $gray-400	;
+	margin-bottom: 0;
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.accordion-title {
+	font-weight: 700;
+	font-size: app.rem-calc(22);
+	text-decoration: none;
+	color: $black-400;
+	transition: all $ease-io-fast;
+	
+	&::before {
+		display: block;
+		position: absolute;
+		left: 0;
+		content: "\e901";
+		color: $black-400;
+		font-family: "icon-font-family";
+		margin-right: app.rem-calc(15);
+		transition: all $ease-io-fast;
+	}
+
+	@include app.breakpoint(medium) {
+		font-size: app.rem-calc(30);
+	}
+}
+
+.accordion-item.is-active {
+	> .accordion-title{
+		color: $black-400;
+
+
+		&:before {
+			color: $black-400;
+			transform: rotate(90deg);
+		}
+	}
+}
+
+.accordion-content {
+	@include app.breakpoint(medium) {
+		padding: 1rem 4rem;
+	}
+}

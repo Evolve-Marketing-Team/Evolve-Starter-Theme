@@ -1,0 +1,155 @@
+@use '../abstracts' as *;
+@use '../app' as *;
+
+.site-footer {
+	background-color: $black-400;
+}
+
+.footer-row {
+	display: flex;
+	flex-direction: column;
+	padding: rem-calc(30 0);
+
+	@include breakpoint(xlarge) {
+		flex-direction: row;
+		padding: rem-calc(60 0);
+	}
+}
+
+.footer-column {
+	display: flex;
+	flex-direction: column;
+	@include xy-cell(auto, $gutter-type: padding, $gutters: .625rem);
+	text-align: left;
+	padding-top: rem-calc(15);
+	padding-bottom: rem-calc(15);
+	font-weight: 300;
+
+
+	@include breakpoint(xlarge) {
+		padding-left: rem-calc(50);
+		padding-right: rem-calc(50);
+		border-right: 1px solid $gray-200;
+	}
+
+	&:last-child {
+		border-right: none;
+	}
+
+	h3 {
+		font-size: rem-calc(26);
+		margin-bottom: 1rem;
+	}
+
+	.custom-logo-link {
+		width: rem-calc(280);
+	}
+
+	address {
+		line-height: 1.8;
+	}
+
+	a {
+		color: $black-400;
+		text-decoration: none;
+
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+
+	.social-links {
+		margin-top: rem-calc(35);
+	}
+
+	.social-link__url {
+		display: inline-block;
+		padding-left: rem-calc(10);
+		padding-right: rem-calc(10);
+
+		&:first-child {
+			padding-left: 0;
+		}
+
+		&:last-child {
+			padding-right: 0;
+		}
+
+		&:hover svg, &:focus svg {
+			fill: $gray-200;
+		}
+
+		svg {
+			fill: $white;
+			height: 38px;
+			width: 38px;
+			transition: all $ease-io-fast;
+		}
+	}
+}
+
+.footer-branding {
+	justify-content: center;
+}
+
+.secondary-footer {
+	background-color: $gray-600;
+}
+
+.footer-site-info {
+	@include xy-grid;
+	justify-content: center;
+	list-style: none;
+	font-size: rem-calc(14);
+	font-weight: 300;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-left: 0;
+	margin-bottom: 0;
+	color: $white;
+
+	@include breakpoint(medium) {
+		font-size: rem-calc(18);
+	}
+
+	li {
+		margin-bottom: 0;
+		&:after {
+			display: inline-block;
+			content: "|";
+			
+		}
+
+		&:nth-child(2) {
+			&:after {
+				content: none;
+
+				@include breakpoint(medium) {
+					content: "|";
+				}
+			}
+		}
+
+		&:last-child {
+			&:after {
+				content: none;
+			}
+		}
+
+		span {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			padding-left: 1rem;
+			padding-right: 1rem;
+
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+}

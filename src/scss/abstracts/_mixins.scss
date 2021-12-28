@@ -1,0 +1,44 @@
+@use 'foundation-sites/scss/util/util' as *;
+@use 'vars' as *;
+
+@mixin section {
+	padding-top: $section-padding--xs;
+	padding-bottom: $section-padding--xs;
+
+	@include breakpoint(medium) {
+		padding-top: $section-padding--sm;
+		padding-bottom: $section-padding--sm;
+	}
+}
+
+@mixin section-small {
+	padding-top: $section-padding--xs;
+	padding-bottom: $section-padding--xs;
+}
+
+@mixin screen-reader-text {
+	/* Text meant only for screen readers. */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+@mixin background-overlay {
+	display: block;
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: $z-negative-behind;
+}
+
+@mixin subheader {
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}

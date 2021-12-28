@@ -1,0 +1,111 @@
+@use 'abstracts' as *;
+@use './foundation-sites/scss/foundation' as app;
+/*--------------------------------------------------------------
+# Subpage Hero
+--------------------------------------------------------------*/
+.sp-hero__heading {
+	line-height: 1.2;
+}
+
+.sp-hero__subheading {
+	font-size: app.rem-calc(22);
+	
+	p {
+		line-height: 1.6;
+	}
+
+	@include app.breakpoint(medium) {
+		font-size: app.rem-calc(26);
+	}
+}
+
+/*--------------- Simple Hero */
+.sp-hero {
+	.sp-hero-simple-row {
+		display: flex;
+		justify-content: center;
+
+		.sp-hero__content {
+			padding-left: app.rem-calc(20);
+			padding-right: app.rem-calc(20);
+			padding-top: app.rem-calc(30);
+			padding-bottom: app.rem-calc(30);
+			text-align: center;
+
+			@include app.breakpoint(medium) {
+				padding-left: app.rem-calc(50);
+				padding-right: app.rem-calc(50);
+			}
+
+			@include app.breakpoint(xlarge) {
+				padding-left: app.rem-calc(120);
+				padding-right: app.rem-calc(120);
+			}
+		}
+
+		.sp-hero__heading {
+			margin-bottom: 0;
+		}
+
+		.sp-hero__subheading {
+			a {
+				color: inherit;
+			}
+		}
+
+		.sp-hero__heading + .sp-hero__subheading {
+			margin-top: app.rem-calc(15);
+		}
+	}
+}
+
+/*--------------- Image Hero */
+.sp-hero-image-row {
+	@include app.xy-grid;
+	.sp-hero__content, .sp-hero__image {
+		@include app.xy-cell(12, $gutter-type: none);
+
+		@include app.breakpoint(large) {
+			@include app.xy-cell(6, $gutter-type: none);
+		}
+	}
+
+	.sp-hero__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: app.rem-calc(20);
+		padding-right: app.rem-calc(20);
+		padding-top: app.rem-calc(30);
+		padding-bottom: app.rem-calc(30);
+
+		@include app.breakpoint(medium) {
+			padding-left: app.rem-calc(50);
+			padding-right: app.rem-calc(50);
+		}
+
+		@include app.breakpoint(xlarge) {
+			padding-left: app.rem-calc(120);
+			padding-right: app.rem-calc(120);
+		}
+	}
+
+	.sp-hero__heading {
+		text-align: left;
+	}
+
+	.sp-hero__subheading {
+		a {
+			color: inherit;
+		}
+	}
+
+	.sp-hero__image {
+		img {
+			height: inherit;
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+}
+

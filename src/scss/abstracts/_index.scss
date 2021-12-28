@@ -1,0 +1,8 @@
+/*-------------------------------------------------------------------
+Abstracts Index: Forward all partials within Abstracts to be used
+in other partials as a single @use. Example: @use 'abtracts' as *;
+-------------------------------------------------------------------*/
+@forward 'colors';
+@forward 'mixins';
+@forward 'vars';
+@forward 'maps';

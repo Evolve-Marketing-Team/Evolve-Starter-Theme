@@ -1,0 +1,129 @@
+@use '../abstracts' as *;
+@use '../app' as *;
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------*/
+// 1. Base Button Styling
+// 2. WP Block Buttons
+
+/*--------------------------------------------------------------
+ 1. Base Button Styling
+--------------------------------------------------------------*/
+.btn, body .gform_wrapper .gform_footer button {
+	@include button;
+
+	@include breakpoint(small only) {
+		font-size: 1rem;
+	}
+
+}
+
+.btn--black {
+	background-color: $black-400;
+	color: $white;
+
+	&:hover, &:focus {
+		background-color: lighten($black-400, 5%);
+		color: $white;
+	}
+}
+
+.btn, .nav-menu-btn > a, .wp-block-button__link, .wp-block-button__link, body .gform_wrapper .gform_footer button {
+	font-size: rem-calc(18);
+	text-transform: uppercase;
+	letter-spacing: 0.046em;
+	text-decoration: none;
+}
+
+.btn.hollow {
+	background-color: transparent;
+	color: $black-400;
+	border-color: $black-400;
+
+	&:hover, &:focus {
+		background-color: $black-400;
+		color: $white;
+	}
+}
+
+/*--------------------------------------------------------------
+ 2. WP Block Buttons
+--------------------------------------------------------------*/
+.wp-block-buttons {
+	> .wp-block-button {
+		margin-right: 2em;
+			margin-bottom: 0;
+
+		&:last-child, &:only-child {
+			margin-right: 0;
+		}
+	}
+
+	> .wp-block-button.wp-block-button {
+
+		&:last-child {
+			margin-left: 0;
+		}
+
+		@include breakpoint(medium) {
+			&:last-child {
+				margin-left: 1em;
+			}
+		}
+	}
+}
+
+// This is for admin in editor for placeholder text within button. 
+.wp-block-button:not(.has-text-color):not(.is-style-outline) [data-rich-text-placeholder]:after {
+	color: $black-400;
+}
+
+.wp-block-button__link {
+	@include button;
+	
+	&:hover {
+		text-decoration: none;
+	}
+
+	// Default color set if text color isn't selected in WP Button settings
+	&:not(.has-text-color) {
+		color: $white;
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+	// Default color set if background color isn't selected in WP Button settings
+	&:not(.has-background) {
+		$default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
+		background-color: $black-400;
+
+		&:hover,
+		&:focus {
+			background-color: $gray-600;
+		}
+	}
+
+	@each $name, $color in $colors {
+
+		&.has-#{$name}-color:hover,
+		&.has-#{$name}-color:focus {
+			color: $color;
+		}
+
+		&.has-#{$name}-background-color:hover,
+		&.has-#{$name}-background-color:focus {
+			background-color: $color;
+		}
+	}
+}
+
+
+.btn-container {
+	max-width: $default-content-width;
+	padding-left: $desktop-lr-padding;
+	padding-right: $desktop-lr-padding;
+	margin: rem-calc(30 auto);
+}
