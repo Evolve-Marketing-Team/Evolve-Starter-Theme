@@ -1,9 +1,6 @@
 @use '../abstracts' as *;
 @use '../app' as *;
 
-.wide-container {
-	@include xy-grid-container($width: rem-calc(1380), $padding: $container-desktop-lr-padding);
-}
 .container {
 	@include xy-grid-container($width: $wide-content-width, $padding: $container-desktop-lr-padding);
 }
