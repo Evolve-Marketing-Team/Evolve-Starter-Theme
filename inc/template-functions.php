@@ -210,6 +210,12 @@ function input_to_button( $button, $form ) {
     return $dom->saveHtml( $new_button );
 }
 
+// Move Yoast Meta box to bottom of editor in post/pages
+function yoast_to_bottom() {
+	return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom');
+
 
 // Load CPT into Archives -- Uncomment code below if you have a CPT and it requires an archive
 // function my_cptui_add_post_types_to_archives( $query ) {
