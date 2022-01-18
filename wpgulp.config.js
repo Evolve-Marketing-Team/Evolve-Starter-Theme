@@ -64,11 +64,7 @@ const jsCustomFile = 'custom';
 // Path to JS custom scripts folder.
 const jsBlocksSRC = './template-parts/blocks/**/*.js';
 
-// Path to place the compiled JS custom scripts file.
-const jsBlocksDestination = './template-parts/blocks/';
-
-// Compiled JS custom file name. Default set to custom i.e. custom.js.
-const jsBlocksFile = 'block';
+const jsBlocksSRCignore = '!./template-parts/blocks/**/*.min.js';
 
 // Images options.
 
@@ -92,8 +88,12 @@ const watchJsVendor = './src/js/vendor/*.js';
 // Path to all custom JS files.
 const watchJsCustom = './src/js/custom/*.js';
 
-// Path to Block JS fules
+// Path to Block JS files
 const watchJsBlocks = './template-parts/blocks/**/*.js';
+
+// Path to Block JS files to ignore
+const watchJsBlocksIgnore = '!./template-parts/blocks/**/*.min.js';
+
 
 
 // Path to all PHP files.
@@ -177,8 +177,8 @@ module.exports = {
 	jsCustomDestination,
 	jsCustomFile,
 	jsBlocksSRC,
+	jsBlocksSRCignore,
 	jsBlocksDestination,
-	jsBlocksFile,
 	imgSRC,
 	imgDST,
 	watchStyles,
@@ -186,6 +186,7 @@ module.exports = {
 	watchJsVendor,
 	watchJsCustom,
 	watchJsBlocks,
+	watchJsBlocksIgnore,
 	watchPhp,
 	zipName,
 	zipDestination,

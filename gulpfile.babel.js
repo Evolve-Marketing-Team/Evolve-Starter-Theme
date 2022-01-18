@@ -504,13 +504,8 @@ gulp.task('blocksJS', () => {
 				]
 			})
 		)
-		.pipe(remember(config.jsBlocksSRC)) // Bring all files back to stream.
-		.pipe(concat(config.jsBlocksFile + '.js'))
-		.pipe(lineec()) // Consistent Line Endings for non UNIX systems.
-		.pipe(gulp.dest(config.jsBlocksDestination))
 		.pipe(
 			rename({
-				basename: config.jsBlocksFile,
 				suffix: '.min'
 			})
 		)
