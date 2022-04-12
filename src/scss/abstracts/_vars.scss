@@ -6,20 +6,19 @@ $narrow-content-width: rem-calc(640);
 $default-content-width: rem-calc(840);
 $wide-content-width: rem-calc(1100);
 
-// Container Padding (left/right)
+// Container Padding (left and right) - This is mainly used for custom containers using Foundaation's include in _containers.scss
 $container-desktop-lr-padding: rem-calc(40);
 $container-mobile-lr-padding: rem-calc(20);
 
 $desktop-lr-padding: rem-calc(20);
 $mobile-lr-padding: rem-calc(10);
 
-// Section Padding
+// Section Padding - Used for top/bottom section padding. 
 $section-padding__xs: rem-calc(40);
 $section-padding__sm: rem-calc(60);
 $section-padding__md: rem-calc(70);
 $section-padding__lg: rem-calc(90);
 $section-padding__xl: rem-calc(130);
-
 
 // Ease
 $ease-normal: 0.5s ease;
@@ -47,5 +46,5 @@ $z-super-overall: 9999;
 // Box Shadow
 $default-box-shadow: 6px 0px 12px rgba($black-400, 0.15);
 
-// Icon Font
-$icon-font: "cgfs";
+// Icon Font - Make sure to change the name of the icon font
+$icon-font: "evolve-starter";

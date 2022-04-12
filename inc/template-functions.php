@@ -110,7 +110,8 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 /**
  * Social Links
- * Uses Social URLs specified in Yoast SEO. See SEO > Social
+ * Uses Social URLs specified in Yoast SEO. See SEO > Social in WP admin
+ * SVG code can be replaced to match designs. 
  *
  */
 function ea_social_links() {
@@ -172,7 +173,7 @@ function ea_social_links() {
 add_shortcode( 'social_links', 'ea_social_links' );
 
 /**
- * Reusable Blocks accessible in backend
+ * Adds Reusable blocks in WP sidebar menu
  * @link https://www.billerickson.net/reusable-blocks-accessible-in-wordpress-admin-area
  *
  */
