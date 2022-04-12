@@ -56,14 +56,35 @@ function gutenberg_sections_register_acf_color_palette() {
  * ACF Options Page: Uncomment Below to activate
  */
 
-// if( function_exists('acf_add_options_page') ) {
+if( function_exists('acf_add_options_page') ) {
 	
-// 	acf_add_options_page(array(
-// 		'page_title' 	=> 'Theme Options',
-// 		'menu_title'	=> 'Theme Options',
-// 		'menu_slug' 	=> 'theme-options',
-// 		'capability'	=> 'edit_posts',
-// 		'icon_url' 		=> 'dashicons-admin-settings',
-// 		'redirect'		=> false
-// 	));	
-// }
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme Options',
+		'menu_title'	=> 'Theme Options',
+		'menu_slug' 	=> 'theme-options',
+		'capability'	=> 'edit_posts',
+		'icon_url' 		=> 'dashicons-editor-kitchensink',
+		'redirect'		=> true
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title'	=> 'Header Message Bar',
+		'menu_title'	=> 'Header Message Bar',
+		'parent_slug'	=> 'theme-options',
+	));
+
+    // acf_add_options_sub_page(array(
+	// 	'page_title'	=> 'Footer Content',
+	// 	'menu_title'	=> 'Footer Content',
+	// 	'parent_slug'	=> 'theme-options',
+	// ));
+
+	// acf_add_options_page(array(
+	// 	'page_title' 	=> 'Global CTAs',
+	// 	'menu_title'	=> 'Global CTAs',
+	// 	'menu_slug' 	=> 'global-ctas',
+	// 	'capability'	=> 'edit_posts',
+	// 	'icon_url' 		=> 'dashicons-megaphone',
+	// 	'redirect'		=> true
+	// ));
+}

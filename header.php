@@ -73,3 +73,18 @@
 			</div><!-- .nav-container -->
 			
 		</header><!-- #masthead -->
+		
+		<?php 
+		$enable_hmb = get_field('enable_message_bar', 'option');
+		$message = get_field('message', 'option');
+		
+		if($enable_hmb == "1") : ?>
+		<div class="header-message-bar">
+
+			<div class="container">
+
+				<div class="header-message"><?php echo $message; ?></div>
+
+			</div>
+		</div>
+		<?php endif; ?>
