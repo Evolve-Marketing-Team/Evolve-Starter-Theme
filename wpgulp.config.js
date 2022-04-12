@@ -95,7 +95,6 @@ const watchJsBlocks = './template-parts/blocks/**/*.js';
 const watchJsBlocksIgnore = '!./template-parts/blocks/**/*.min.js';
 
 
-
 // Path to all PHP files.
 const watchPhp = './**/*.php';
 
@@ -145,13 +144,13 @@ const translationDestination = './languages';
 const packageName = 'evolve_starter';
 
 // Where can users report bugs.
-const bugReport = 'https://AhmadAwais.com/contact/';
+const bugReport = 'https://www.evolvemarketingteam.com/contact-us/';
 
 // Last translator Email ID.
-const lastTranslator = 'Ahmad Awais <your_email@email.com>';
+const lastTranslator = 'Alex Franco - Evolve Marketing <alexf@evolvemarketingteam.com>';
 
 // Team's Email ID.
-const team = 'AhmadAwais <your_email@email.com>';
+const team = 'Alex Franco - Evolve Marketing <alexf@evolvemarketingteam.com>';
 
 // Browsers you care about for auto-prefixing. Browserlist https://github.com/ai/browserslist
 // The following list is set as per WordPress requirements. Though; Feel free to change.

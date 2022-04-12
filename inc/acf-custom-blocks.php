@@ -34,7 +34,7 @@ function evolve_starter_acf_blocks() {
     if( function_exists('acf_register_block_type') ) {
 
 		// Register Latest Posts
-         acf_register_block_type(array(
+        acf_register_block_type(array(
             'name'              => 'latest-posts',
             'title'             => __('Latest Posts'),
             'description'       => __('A section displaying the most 3 recent posts.'),
@@ -49,7 +49,7 @@ function evolve_starter_acf_blocks() {
         ));
 
 		// Video Gallery
-         acf_register_block_type(array(
+        acf_register_block_type(array(
             'name'              => 'video-gallery',
             'title'             => __('Video Gallery'),
             'description'       => __('A video gallery where you can insert YouTube video links. '),
@@ -64,7 +64,7 @@ function evolve_starter_acf_blocks() {
         ));
 
 		// Register Team Cards
-         acf_register_block_type(array(
+        acf_register_block_type(array(
             'name'              => 'team-cards',
             'title'             => __('Team Cards'),
             'description'       => __('A section with card layout for team members.'),
@@ -79,7 +79,7 @@ function evolve_starter_acf_blocks() {
         ));
 
 		// Register SP Hero
-         acf_register_block_type(array(
+        acf_register_block_type(array(
             'name'              => 'sp-hero',
             'title'             => __('Supage Hero'),
             'description'       => __('Subpage hero with simple and image option.'),
@@ -98,7 +98,7 @@ function evolve_starter_acf_blocks() {
         ));
 
 		 // Register Accordions
-         acf_register_block_type(array(
+        acf_register_block_type(array(
             'name'              => 'accordions',
             'title'             => __('Accordions'),
             'description'       => __('Accordions'),
@@ -116,7 +116,7 @@ function evolve_starter_acf_blocks() {
         ));
 
 		// Register Simple CTA
-         acf_register_block_type(array(
+        acf_register_block_type(array(
             'name'              => 'simple-cta',
             'title'             => __('Simple CTA'),
             'description'       => __('A simple CTA with column text and button.'),
