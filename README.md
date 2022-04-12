@@ -33,21 +33,29 @@ This starter theme is ready to build ACF Blocks and process SCSS and JS files us
 - **Enqueue CSS and JS Assets:** Ensure you follow the current setup to enqueue assets so the CSS and JS will load on front and back-end. 
 
 ## ACF Functions
-File Location: */inc/acf-functions.php*
+File location: */inc/acf-functions.php*
 This file has some functions to dynamically load Gutenberg color palette and the base setup to add an Options admin area for Global theme options. 
 
 ## MCE Functions
-File Location: */inc/mce-functions.php*
+File location: */inc/mce-functions.php*
 This file includes base setup to add custom style formats within the MCE editor/Classic Editor. You will also need to add the color palette from Theme Options within here as well for consitency. 
 
 ## Template Functions
 This theme has frequently used functions that are typically used for every project. When adding more functions required for the theme, please add them within */inc/template-functions.php* instead of the *functions.php* file. 
 
 ## Template Tags
-The template tags files located */inc/template-tags.php* has some functions that will generate markup and meta that's mainly used for Posts. 
+File location: */inc/template-tags.php*
+The template tags has some functions that will generate markup and meta that's mainly used for Posts. 
 
 ## Block Styles
-File Location: */src/js/editor/editor.js*
+File location: */src/js/editor/editor.js*
 Custom block styles should be registered within *editor.js*. Examples of usage are custom style lists, button style variations, or heading variations. Please read [**Block Styles in Gutenberg**](https://www.billerickson.net/block-styles-in-gutenberg/) for more information, especially pertaining to adding Default Style option. 
+
+## Custom Login
+File locations: */inc/wp-custom-login.php*, */scss/wplogin.scss*
+This theme has support for adding a custom login screen for WP Admin. The SCSS file doesn't run with default `npm start` default task. You'll have to manually run `gulp wplogin-style` to build CSS file. 
+## Font Loader
+There is a custom function within *functions.php* that will preload and load web fonts from Adobe and Google starting on line 106. 
+
 ## Contributing
 This will be an on-going development project where features will conintually be added. Please feel free to make pull requests or create your own feature branch. 

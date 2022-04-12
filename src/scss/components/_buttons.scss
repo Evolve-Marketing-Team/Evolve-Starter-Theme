@@ -86,7 +86,7 @@
 		text-decoration: none;
 	}
 
-	// Default color set if text color isn't selected in WP Button settings
+	// Default color set if text color isn't selected in WP Button settings. Make sure to set this as the default button color scheme from designs. 
 	&:not(.has-text-color) {
 		color: $white;
 
@@ -95,7 +95,7 @@
 		}
 	}
 
-	// Default color set if background color isn't selected in WP Button settings
+	// Default color set if background color isn't selected in WP Button settings. Make sure to set this as the default button color scheme from designs. 
 	&:not(.has-background) {
 		$default: nth( nth( $colors, 1 ), 2 ); // first color in $colors array
 		background-color: $black-400;
