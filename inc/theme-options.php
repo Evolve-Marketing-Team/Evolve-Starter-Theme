@@ -227,11 +227,11 @@ function evolve_starter_enable_responsive_embeds() {
 add_action( 'after_setup_theme', 'evolve_starter_enable_responsive_embeds' );
 
 /**
- * Enable responsive embedded content if the evolve_starter-responsive-embeds setting is active.
+ * Enable block scripts for adding block styles.
  */
 function evolve_starter_enable_wp_block_scripts() {
 
-	if ( get_option( 'evolve_starter-wp-block-scripts' ) == 1 ) {
+	if ( get_option( 'evolve_starter-wp-block-scripts', 1 ) == 1 ) {
 		
 		wp_enqueue_script(
 			'gutenberg-starter-editor', 
