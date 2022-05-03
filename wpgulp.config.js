@@ -59,6 +59,17 @@ const jsCustomDestination = './assets/js/';
 // Compiled JS custom file name. Default set to custom i.e. custom.js.
 const jsCustomFile = 'custom';
 
+// JS Editor options.
+
+// Path to JS editor scripts folder.
+const jsEditorSRC = './src/js/editor/*.js';
+
+// Path to place the compiled JS custom scripts file.
+const jsEditorDestination = './assets/js/';
+
+// Compiled JS custom file name. Default set to custom i.e. custom.js.
+const jsEditorFile = 'editor';
+
 // JS Blocks options.
 
 // Path to JS custom scripts folder.
@@ -87,6 +98,9 @@ const watchJsVendor = './src/js/vendor/*.js';
 
 // Path to all custom JS files.
 const watchJsCustom = './src/js/custom/*.js';
+
+// Path to all editor JS files.
+const watchJsEditor = './src/js/editor/*.js';
 
 // Path to Block JS files
 const watchJsBlocks = './template-parts/blocks/**/*.js';
@@ -175,6 +189,9 @@ module.exports = {
 	jsCustomSRC,
 	jsCustomDestination,
 	jsCustomFile,
+	jsEditorSRC,
+	jsEditorDestination,
+	jsEditorFile,
 	jsBlocksSRC,
 	jsBlocksSRCignore,
 	jsBlocksDestination,
