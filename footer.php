@@ -55,6 +55,7 @@
 	
 </footer><!-- #colophon -->
 
+<!-- Enable sticky by uncommenting within foundation-app.scss. REMOVE this comment after enabling -->
 <div class="sticky-container" data-sticky-container>
 	<div class="gdpr-bar sticky" data-sticky data-stick-to="bottom" data-margin-bottom="0" data-sticky-on="small">
 		<div class="container">
