@@ -3,6 +3,25 @@ const $ = jQuery.noConflict();
 // Fire All Foundation
 $(document).foundation();
 
+// GDPR Cookie 
+const gdprCookie = Cookies.noConflict();
+const cookieFetch = gdprCookie.get('GDPR');
+const gdprBar = document.querySelector(".sticky-container");
+// const gdprBtn = document.querySelector("#gdprAccept"); // Eventually convert to EventListener and remove onClick from button code. 
+
+function gdprHide() {
+	gdprBar.style.display = "none";
+}
+
+function cookieSet() {
+	gdprCookie.set('GDPR', 'true', { expires: 365 });
+	gdprHide();
+}
+
+if (cookieFetch) {
+    gdprHide();
+}
+
 
 // Navigation Menu Toggle
 const hamburger = document.querySelector('.hamburger');
