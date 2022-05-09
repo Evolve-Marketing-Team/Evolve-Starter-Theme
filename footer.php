@@ -55,6 +55,17 @@
 	
 </footer><!-- #colophon -->
 
+<div class="sticky-container" data-sticky-container>
+	<div class="gdpr-bar sticky" data-sticky data-stick-to="bottom" data-margin-bottom="0" data-sticky-on="small">
+		<div class="container">
+			<div class="gdpr-inner">
+				<span>This website uses cookies to ensure the best user experience. <a href="/privacy-policy/" class="gdpr-text-link">View Privacy Policy.</a></span>
+				<button class="btn btn--gdpr" id="gdprAccept" onclick="cookieSet()" aria-label="Dismiss Cookie Notice" type="submit">Accept &amp; Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
