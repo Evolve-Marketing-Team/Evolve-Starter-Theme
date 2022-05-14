@@ -538,7 +538,7 @@ gulp.task('editorJS', () => {
  */
 gulp.task('blocksJS', () => {
 	return gulp
-		.src(config.jsBlocksSRC, {since: gulp.lastRun('blocksJS')}) // Only run on changed files.
+		.src([config.jsBlocksSRC, config.jsBlocksSRCignore], {since: gulp.lastRun('blocksJS')}) // Only run on changed files.
 		.pipe(plumber(errorHandler))
 		.pipe(
 			babel({
