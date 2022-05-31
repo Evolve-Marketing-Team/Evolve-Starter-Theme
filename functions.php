@@ -122,7 +122,7 @@ add_action( 'after_setup_theme', 'evolve_starter_content_width', 0 );
  */
 // function typekit_fonts_loader() {
 
-// 	echo '<link rel="stylesheet" href="typekit_url_here">';
+// 	echo '<link rel="stylesheet" href="typekit_url_here" media="print" onload="this.media=\'all\'" />';
 // }
 
 // add_action( 'wp_head', 'typekit_fonts_loader', 10 );
