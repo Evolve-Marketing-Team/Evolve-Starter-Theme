@@ -21,6 +21,22 @@ function evolve_starter_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'evolve_starter_body_classes' );
 
+
+/**
+ *  Add wp_body_open support
+ * 
+ * */ 
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Shim for sites older than 5.2.
+	 *
+	 * @link https://core.trac.wordpress.org/ticket/12563
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+endif;
+
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
