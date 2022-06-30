@@ -2,7 +2,27 @@
 
 var $ = jQuery.noConflict(); // Fire All Foundation
 
-$(document).foundation(); // Navigation Menu Toggle
+$(document).foundation(); // GDPR Cookie 
+
+var gdprCookie = Cookies.noConflict();
+var cookieFetch = gdprCookie.get('GDPR');
+var gdprBar = document.querySelector(".sticky-container"); // const gdprBtn = document.querySelector("#gdprAccept"); // Eventually convert to EventListener and remove onClick from button code. 
+
+function gdprHide() {
+  gdprBar.style.display = "none";
+}
+
+function cookieSet() {
+  gdprCookie.set('GDPR', 'true', {
+    expires: 365
+  });
+  gdprHide();
+}
+
+if (cookieFetch) {
+  gdprHide();
+} // Navigation Menu Toggle
+
 
 var hamburger = document.querySelector('.hamburger');
 var mobileNav = document.querySelector('.mobile-navigation');
