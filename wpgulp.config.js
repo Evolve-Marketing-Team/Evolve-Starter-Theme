@@ -77,6 +77,12 @@ const jsBlocksSRC = './template-parts/blocks/**/*.js';
 
 const jsBlocksSRCignore = '!./template-parts/blocks/**/*.min.js';
 
+// Path to place the compiled JS custom scripts file.
+const jsBlocksDestination = './template-parts/blocks/';
+
+// Compiled JS custom file name. Default set to custom i.e. custom.js.
+const jsBlocksFile = 'block';
+
 // Images options.
 
 // Source folder of images which should be optimized and watched.
@@ -195,12 +201,14 @@ module.exports = {
 	jsBlocksSRC,
 	jsBlocksSRCignore,
 	jsBlocksDestination,
+	jsBlocksFile,
 	imgSRC,
 	imgDST,
 	watchStyles,
 	watchBlockStyles,
 	watchJsVendor,
 	watchJsCustom,
+	watchJsEditor,
 	watchJsBlocks,
 	watchJsBlocksIgnore,
 	watchPhp,
