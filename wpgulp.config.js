@@ -174,7 +174,7 @@ const team = 'Alex Franco - Evolve Marketing <alexf@evolvemarketingteam.com>';
 
 // Browsers you care about for auto-prefixing. Browserlist https://github.com/ai/browserslist
 // The following list is set as per WordPress requirements. Though; Feel free to change.
-const BROWSERS_LIST = ['last 2 version', '> 1%'];
+const BROWSERS_LIST = ['> 1%', 'last 2 version', 'not ie', 'not ie_mob'];
 
 // Export.
 module.exports = {
