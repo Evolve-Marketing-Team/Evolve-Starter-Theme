@@ -69,3 +69,13 @@ There is a custom function within *functions.php* that will preload and load web
 
 ## Contributing
 This will be an on-going development project where features will conintually be added. Please feel free to make pull requests or create your own feature branch. 
+
+## Resource Links
+- [**Getting Started w/ACF Blocks**](https://www.advancedcustomfields.com/resources/blocks/)
+- [**ACF Register Block Type**](https://www.advancedcustomfields.com/resources/blocks/)
+- [**Dashicons - What we use to render icons in ACF Blocks admin**](https://www.advancedcustomfields.com/resources/blocks/)
+- [**Hamburgers - What we use to animate mobile menu**](https://jonsuh.com/hamburgers/)
+- [**Foundation Docs**](https://get.foundation/sites/docs/)
+- [**SlickJS - What we currently use as a slider**](https://kenwheeler.github.io/slick/)
+- [**SwiperJS - What we plan to switch to as a slider**](https://swiperjs.com/)
+- [**Gutenberg Button Styles**](https://www.billerickson.net/wordpress-color-palette-button-styling-gutenberg/)
