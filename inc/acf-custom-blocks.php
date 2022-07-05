@@ -2,8 +2,10 @@
 /**
  * Register custom ACF block types here. Add Custom Functions
  *
- *
+ * Follow the resource links below setting up the Block types. 
  * @link https://www.advancedcustomfields.com/resources/blocks/
+ * @link https://www.advancedcustomfields.com/resources/acf_register_block_type/
+ * 
  *
  * @package evolve_starter
  */
