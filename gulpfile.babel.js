@@ -87,8 +87,10 @@ const errorHandler = r => {
  */
 const browsersync = done => {
 	browserSync.init({
+		// Change host to address used in Local app. 
 		host: 'evolve-starter.local',
 		proxy: config.projectURL,
+		// HTTPS is optional. Is required when working with WooCommerce where SSL is necessary. 
 		https: true,
 		open: 'external',
 

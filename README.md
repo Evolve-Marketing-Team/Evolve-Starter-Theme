@@ -7,7 +7,15 @@ Clone this repo into your new client project. Once the repo is cloned, CD into t
 
 `rm -rf .git`
 
-To install all the dependencies, run npm in theme directory. 
+### Theme Naming
+To follow proper theme naming conventions and setup, you'll need to do the following
+1. Change theme folder name to client-specific name. Example, Pilot Plastics would be pilotplastics. 
+2. Perform a search and replace within code editor to replace evolve_starter with client-specific name. You can use same format as the folder name. 
+
+## Gulp Configurations
+Comments are attached to the browsersync function, which will need modified based on your project. 
+
+To install all the dependencies, run `npm install` in theme directory. 
 
 `npm start`
 
@@ -24,7 +32,7 @@ There are a few optional settings available in the `Appearance > Theme Options` 
 - [**Responsive embedded content**](https://developer.wordpress.org/block-editor/developers/themes/theme-support/#responsive-embedded-content). When this is active, embed blocks will automatically reflect the aspect ratio of content that is embedded in an iFrame.
 
 ## Special Notes
-While working with Local and pushing/pulling updates to dev environment, please ensure you set .wpe-push-ignore and .wpe-pull-ignore to ignore the themes /node_modules folder. 
+While working with Local and pushing/pulling updates to dev environment, please ensure you set .wpe-push-ignore and .wpe-pull-ignore to ignore the themes /node_modules folder. [Include path to ignore]
 
 ## ACF Blocks
 File Location: */inc/acf-custom-blocks.php*
