@@ -13,7 +13,9 @@ To follow proper theme naming conventions and setup, you'll need to do the follo
 2. Perform a search and replace within code editor to replace evolve_starter with client-specific name. You can use same format as the folder name. 
 
 ## Gulp Configurations
-Comments are attached to the browsersync function, which will need modified based on your project. 
+Comments are attached to the browsersync function, which will need modified based on your project. You'll need to modify the project URL/host in:
+1. gulpfile.babel.js
+2. wpgulp.config.js
 
 To install all the dependencies, run `npm install` in theme directory. 
 
