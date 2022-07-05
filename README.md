@@ -79,3 +79,4 @@ This will be an on-going development project where features will conintually be 
 - [**SlickJS - What we currently use as a slider**](https://kenwheeler.github.io/slick/)
 - [**SwiperJS - What we plan to switch to as a slider**](https://swiperjs.com/)
 - [**Gutenberg Button Styles**](https://www.billerickson.net/wordpress-color-palette-button-styling-gutenberg/)
+- [**Kerning to Letter Spacing Converter**](https://codepen.io/bmarshall511/pen/yxJQwJ/)
