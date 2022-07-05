@@ -10,23 +10,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-	<section class="sp-hero sp-hero--default column jc-center ai-center alignfull">
-
-		<div class="container">
-
-			<div class="row jc-center ai-center sph-heading-row">
-
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header><!-- .entry-header -->
-
-			</div>
-
-		</div>
-
-	</section>
-
 	
 	<div class="entry-content">
 		<?php
