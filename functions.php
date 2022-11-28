@@ -40,6 +40,10 @@ if ( ! function_exists( 'evolve_starter_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
+		
+
+		// Add excerpt support for pages.
+		add_post_type_support( 'page', 'excerpt' );
 
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
