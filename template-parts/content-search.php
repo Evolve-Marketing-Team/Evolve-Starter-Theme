@@ -6,9 +6,8 @@
  *
  * @package evolve_starter
  */
-
+$content_trim = wp_trim_words( get_the_content(), 30, ' . . .' );
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -24,7 +23,14 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+		<?php if ( has_excerpt() ) {
+			the_excerpt();
+		}
+
+		else {
+			echo $content_trim;
+		}
+		?>
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
