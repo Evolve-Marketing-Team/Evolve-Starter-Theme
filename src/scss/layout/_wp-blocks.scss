@@ -428,3 +428,18 @@ ul.is-style-list-style-none {
 	margin-left: 0;
 	list-style: none;
 }
+
+ul.is-style-two-column {
+	max-width: rem-calc(700) !important;
+	
+	@include breakpoint(medium) {
+		columns: 2;
+		margin: 0 auto !important;
+	}
+
+	li {
+		width: fit-content;
+		padding-left: rem-calc(10);
+		padding-right: rem-calc(10);
+	}
+}
