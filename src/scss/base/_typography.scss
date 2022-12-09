@@ -80,3 +80,17 @@ ol {
 		column-gap: 2rem;
 	}
 }
+
+// Only want tel links to display on mobile and not target buttons.
+a[href^="tel"]:not(.btn, .wp-block-button__link) {
+	border-bottom: 1px solid $black-400;
+	transition: border-bottom-color $ease-io-fast;
+
+	&:hover, &:focus {
+		border-bottom-color: transparent;
+	}
+
+	@include breakpoint(large) {
+		border-bottom: none;
+	}
+}
