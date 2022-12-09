@@ -37,17 +37,19 @@ wp.domReady( () => {
 			label: 'White Button',
 		},
 	]);
-	
-	wp.blocks.registerBlockStyle( 'core/group', [
-		{
-			name: 'default',
-			label: 'Default',
-			isDefault: true,
-		},
 
-		{
-			name: 'full-width-content',
-			label: 'Full Width',
-		},
-	]);
+	// Need more control for Group block - uncomment code below.
+	
+	// wp.blocks.registerBlockStyle( 'core/group', [
+	// 	{
+	// 		name: 'default',
+	// 		label: 'Default',
+	// 		isDefault: true,
+	// 	},
+
+	// 	{
+	// 		name: 'full-width-content',
+	// 		label: 'Full Width',
+	// 	},
+	// ]);
 });
