@@ -15,13 +15,13 @@
 
 	<div class="row">
 
-		<div class="footer-branding">
+		<div class="footer-column footer-branding">
 
 			<?php the_custom_logo(); ?>
 
 		</div>
 
-		<div class="footer-navigation">
+		<div class="footer-column footer-navigation">
 
 			<?php 
 				wp_nav_menu(array(
@@ -35,20 +35,40 @@
 
 		</div>
 
-		<ul class="footer-site-info">
+		<div class="footer-column">
 
-			<li><a href="<?php echo home_url('/privacy-policy'); ?>">Privacy Policy</a></li>
+			<h3>Follow Us</h3>
 
-			<li><a href="<?php echo home_url('/terms-conditions'); ?>">Terms &amp; Conditions</a></li>
+			<div class="ea-social-links-container">
+
+				<?php 
+				if ( function_exists( 'af_social_links' ) ) {
+					echo af_social_links(); 
+				}
+				?>
+
+			</div>
+
+		</div>
+
+		<div class="secondary-footer">
+
+			<ul class="footer-site-info">
+
+				<li><a href="<?php echo home_url('/privacy-policy'); ?>">Privacy Policy</a></li>
+
+				<li><a href="<?php echo home_url('/terms-conditions'); ?>">Terms &amp; Conditions</a></li>
 
 
-			<li><a href="<?php echo home_url('/site-map'); ?>">Site Map</a></li>
+				<li><a href="<?php echo home_url('/site-map'); ?>">Site Map</a></li>
 
-			<li><a href="https://www.evolvemarketingteam.com" target="_blank" rel="noopener">An Evolve Marketing Team Web Solution</a></li>
+				<li><a href="https://www.evolvemarketingteam.com" target="_blank" rel="noopener">An Evolve Marketing Team Web Solution</a></li>
 
-			<li>&copy; <?php echo date("Y"); ?> Company Name </li>
+				<li>&copy; <?php echo date("Y"); ?> Company Name </li>
 
-		</ul>
+			</ul>
+
+		</div>
 
 	</div>
 	
