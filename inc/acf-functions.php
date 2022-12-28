@@ -71,6 +71,13 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title'	=> 'Header Message Bar',
 		'menu_title'	=> 'Header Message Bar',
 		'parent_slug'	=> 'theme-options',
+		
+	));
+	
+	acf_add_options_sub_page(array(
+        'page_title'    => 'Social Icons',
+        'menu_title'    => 'Social Icons',
+        'parent_slug'   => 'theme-options',
 	));
 
     // acf_add_options_sub_page(array(
