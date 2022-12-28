@@ -6,7 +6,6 @@
  *
  * @package evolve_starter
  */
-$content_trim = wp_trim_words( get_the_content(), 30, ' . . .' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
@@ -23,13 +22,9 @@ $content_trim = wp_trim_words( get_the_content(), 30, ' . . .' );
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php if ( has_excerpt() ) {
+		<?php
+		// The default output of the_excerpt() is modified in custom function custom_trim_wp_excerpt() in template-functions.php. Review and modify if you need to adjust the ouput. 
 			the_excerpt();
-		}
-
-		else {
-			echo $content_trim;
-		}
 		?>
 	</div><!-- .entry-summary -->
 
