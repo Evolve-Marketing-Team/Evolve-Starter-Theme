@@ -290,3 +290,46 @@ add_filter( 'wpseo_metabox_prio', 'yoast_to_bottom');
 // 	}
 // }
 // add_filter( 'pre_get_posts', 'my_cptui_add_post_types_to_archives' );
+
+/**
+ * Custom excerpt output
+ */
+function custom_wp_trim_excerpt( $text ) {
+    $raw_excerpt = $text;
+    if ( '' == $text ) {
+        // retrieve the post content
+        $text = get_the_content();
+
+        // remove shortcode tags from the content
+        $text = strip_shortcodes( $text );
+
+        // apply content filters
+        $text = apply_filters( 'the_content', $text );
+        $text = str_replace( ']]>', ']]&gt;', $text );
+		
+		// We only want to allow certain tags to output in the excerpt. Reason we include style and mark, is so that any inline styles remain intact and don't display and we want ElasticPress highlighting to work with mark tag. 
+		$allowed_tags = '<b>, <br>, <i>, <style>, <mark>';
+		$text = strip_tags($text, $allowed_tags);
+
+        // indicate the allowed maximum number of words
+        $excerpt_word_count = 50; // change this value to set the number of words
+        $excerpt_length = apply_filters( 'excerpt_length', $excerpt_word_count );
+
+        // create a custom excerpt more variable
+        $excerpt_end = ' . . .'; // change this value to set the text displayed at the end of the excerpt
+        $excerpt_more = apply_filters( 'excerpt_more', ' ' . $excerpt_end );
+
+        // truncate the excerpt to the allowed length
+        $words = preg_split( '/[\n\r\t ]+/', $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY );
+        if ( count( $words ) > $excerpt_length ) {
+            array_pop( $words );
+            $text = implode( ' ', $words );
+            $text = $text . $excerpt_more;
+        } else {
+            $text = implode( ' ', $words );
+        }
+    }
+    return apply_filters( 'wp_trim_excerpt', $text, $raw_excerpt );
+}
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
+add_filter( 'get_the_excerpt', 'custom_wp_trim_excerpt' );
