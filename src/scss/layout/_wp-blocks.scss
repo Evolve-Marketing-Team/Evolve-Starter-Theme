@@ -18,14 +18,16 @@
 	## Site Tagline
 	## Table
 	## Video
-# Additional Theme Styles
-	## Color Palette
+
+	*Note that buttons are in /components/_buttons.scss
 --------------------------------------------------------------*/
 @use '../abstracts' as *;
 @use './app' as *;
 /*--------------------------------------------------------------
 # General Structure
 --------------------------------------------------------------*/
+
+// This will set the default width for all items within .entry-content. When creating blocks, your width overrides should happen at the block level and not target .entry-content. 
 .entry-content > * {
 	margin-left: auto;
 	margin-right: auto;
@@ -296,11 +298,24 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 /*--------------------------------------------------------------
 # List
 --------------------------------------------------------------*/
-.entry-content ul:not(.accordion):not(.is-style-list-style-none),
-.entry-content ol,
-.wp-block-group > .wp-block-group__inner-container > ul,
-.wp-block-group > .wp-block-group__inner-container > ol {
-	margin-left: $list-side-margin;
+ul.is-style-list-style-none {
+	margin-left: 0;
+	list-style: none;
+}
+
+ul.is-style-two-column {
+	max-width: rem-calc(700) !important;
+	
+	@include breakpoint(medium) {
+		columns: 2;
+		margin: 0 auto !important;
+	}
+
+	li {
+		width: fit-content;
+		padding-left: rem-calc(10);
+		padding-right: rem-calc(10);
+	}
 }
 
 /*--------------------------------------------------------------
@@ -419,27 +434,4 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 --------------------------------------------------------------*/
 .wp-block-video video {
 	max-width: $default-content-width;
-}
-
-/*--------------------------------------------------------------
-## List Styles
---------------------------------------------------------------*/
-ul.is-style-list-style-none {
-	margin-left: 0;
-	list-style: none;
-}
-
-ul.is-style-two-column {
-	max-width: rem-calc(700) !important;
-	
-	@include breakpoint(medium) {
-		columns: 2;
-		margin: 0 auto !important;
-	}
-
-	li {
-		width: fit-content;
-		padding-left: rem-calc(10);
-		padding-right: rem-calc(10);
-	}
 }
