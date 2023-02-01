@@ -10,6 +10,7 @@
 	## Image
 	## Latest Posts
 	## List
+	## Media Text
 	## More
 	## Navigation
 	## Pullquote
@@ -26,42 +27,38 @@
 /*--------------------------------------------------------------
 # General Structure
 --------------------------------------------------------------*/
-
-// This will set the default width for all items within .entry-content. When creating blocks, your width overrides should happen at the block level and not target .entry-content. 
-.entry-content > * {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: $default-content-width;
-	padding-left: 0;
-	padding-right: 0;
-
-	@include breakpoint(medium) {
-		padding-left: rem-calc(16);
-		padding-right: rem-calc(16);
-
-	}
-}
-
-.entry-content > .alignwide {
-	max-width: $wide-content-width;
-}
-
-.entry-content > .alignfull {
-	margin: 0;
-	max-width: 100%;
-}
-
-@media screen and (min-width: 608px) {
-	.entry-content > * {
-		padding-left: 0;
-		padding-right: 0;
-	}
-}
-
-
+// This will set the default width for all items within .entry-content. When creating blocks, your width overrides should happen at the block level and not target .entry-content.
 .entry-content {
+
+	> * {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: $default-content-width;
+		padding-left: $mobile-lr-padding;
+		padding-right: $mobile-lr-padding;
+
+		@include breakpoint(medium) {
+			padding-left: $desktop-lr-padding;
+			padding-right: $desktop-lr-padding;
+		}
+	}
+
+	> .alignwide {
+		max-width: $wide-content-width;
+	}
+
+	> .alignfull {
+		max-width: 100%;
+	}
+
+	// Add default spacing for buttons appearing below paragraphs
 	p + .wp-block-buttons {
 		margin-top: rem-calc(30);
+	}
+
+	// Make sure the last child within .entry-content doesn't have a margin if it has a background. For example if the page ends with a heading or paragraph block that has a background color that would typically have a margin bottom. 
+	> *:last-child:where(.has-background) {
+		margin-bottom: 0;
 	}
 }
 
@@ -111,57 +108,69 @@
 	}
 }
 
+// TODO: This is an override for a default styling. Check to see if we can remove or refactor.
+@media screen and (min-width: 600px) and (max-width: 781px) {
+	.wp-block-column:not(:only-child) {
+		flex-basis: 100% important;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Code
 --------------------------------------------------------------*/
-
 .wp-block-code {
 	padding: 0.8em 1em;
 	margin-left: rem-calc(16);
 	margin-right: rem-calc(16);
-}
 
-@media screen and (min-width: 608px) {
-	.wp-block-code {
+	@include breakpoint(medium) {
 		margin-left: auto;
 		margin-right: auto;
 	}
 }
-
 /*--------------------------------------------------------------
 ## Cover
 --------------------------------------------------------------*/
+.wp-block-cover {
 
-.wp-block-cover-text p {
-	padding: rem-calc(25 15);
-}
+	// Unique rule for the Cover block's inner container. You can change this to have a wider content width. 
+	> .wp-block-cover__inner-container {
+		max-width: $default-content-width;
 
-@media screen and (min-width: 608px) {
-	.wp-block-cover-text p {
-		padding: 1.5rem 0;
+		@include breakpoint(medium) {
+			padding-left: $desktop-lr-padding;
+			padding-right: $desktop-lr-padding;
+		}
+	}
+
+	// For alignfull cover block, the max-width of container is wider. This can be adjusted to match designs.
+	&.alignfull {
+		> .wp-block-cover__inner-container {
+			max-width: $wide-content-width;
+		}
 	}
 }
-
 /*--------------------------------------------------------------
 ## Embeds
 --------------------------------------------------------------*/
+.wp-block-embed.type-video {
+	> .wp-block-embed__wrapper {
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-top: 56.25%;
 
-.wp-block-embed.type-video > .wp-block-embed__wrapper {
-	position: relative;
-	width: 100%;
-	height: 0;
-	padding-top: 56.25%;
-}
-
-.wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-}
+		iframe {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+	}
+} 
 
 .wp-block-embed {
 	margin-bottom: rem-calc(30);
@@ -178,123 +187,102 @@
 /*--------------------------------------------------------------
 ## Group
 --------------------------------------------------------------*/
+.wp-block-group {
+	// Overrides the default styles from WordPress. 
+	&:where(.wp-block-group.has-background) {
+		padding: 0;
+	}
 
-.wp-block-group > .wp-block-group__inner-container > .wp-block-columns {
-	margin-bottom: 0;
-}
+	> .wp-block-group__inner-container {
+		@include section;
+		margin-left: auto;
+		margin-right: auto;
+
+		// Universal selector creates the default for all elements within a Group block. This should match the first rule in General Structure. 
+		> * {
+			max-width: $default-content-width;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: $mobile-lr-padding;
+			padding-right: $mobile-lr-padding;
+
+			@include breakpoint(medium) {
+				padding-left: $desktop-lr-padding;
+				padding-right: $desktop-lr-padding;
+			}
+		}
+
+		// The align classes below take care of blocks within group that need width adjustments. 
+		> .alignwide {
+			max-width: 85%;
+		}
+		
+		> .alignfull {
+			max-width: 100%;
+		}
+
+		>.wp-block-columns {
+			margin-bottom: 0;
+		}
+	}
 
 
-@media screen and (min-width: 600px) and (max-width: 781px) {
-	.wp-block-column:not(:only-child) {
-		flex-basis: 100% important;
+	&.has-background:not(.wp-block-group) {
+		// Sets the default top/bottom padding for sections found in /abstracs/_mixins.scss and /abstracts/_vars.scss
+		@include section;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	// For alignfull block groups, the max-width of container is wider. This can be adjusted to match designs.
+	&.alignfull {
+		>.wp-block-group__inner-container {
+			max-width: $wide-content-width;
+		}
 	}
 }
-
-
-.wp-block-group.has-background {
-	@include section;
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.wp-block-group > .wp-block-group__inner-container > *:not(.entry-content) {
-	max-width: $default-content-width;
-	padding-left: $desktop-lr-padding;
-	padding-right: $desktop-lr-padding;
-}
-
-.wp-block-group.alignfull > .wp-block-group__inner-container > * {
-	max-width: $default-content-width;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-block-group > .wp-block-group__inner-container > .alignwide {
-	max-width: $wide-content-width;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-block-group > .wp-block-group__inner-container > .alignfull {
-	max-width: 100%;
-}
-
-.wp-block-group.has-background > .wp-block-group__inner-container > :first-child {
-	margin-top: 0;
-}
-
-.wp-block-group.alignfull > .wp-block-group__inner-container {
-	max-width: $wide-content-width;
-}
-
-.wp-block-cover__inner-container {
-	max-width: $default-content-width;
-	padding-left: $desktop-lr-padding;
-	padding-right: $desktop-lr-padding;
-}
-
-.wp-block-group > .wp-block-group__inner-container {
-	@include section;
-	// padding-left: $desktop-lr-padding;
-	// padding-right: $desktop-lr-padding;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-section.wp-block-group {
-	@include section;
-}
-
-section.wp-block-group > * {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: $default-content-width;
-}
-
-section.wp-block-group.alignfull > * {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: $wide-content-width;
-	padding-left: $container-desktop-lr-padding;
-	padding-right: $container-desktop-lr-padding;
-}
-
 /*--------------------------------------------------------------
 # Image
 --------------------------------------------------------------*/
+// TODO: There are more alignment classes in /base/_alignments.scss. Let's work to consolidate them into here. 
+.wp-block-image {
+	img {
+		display: block;
+	}
 
-.wp-block-image img {
-	display: block;
-}
+	&.alignleft, &.alignright {
+		width: 100%;
 
-.wp-block-image.alignleft,
-.wp-block-image.alignright {
-	width: 100%
-}
+		img, figcaption {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
 
-.wp-block-image.alignfull img {
-	width: 100vw;
-}
+	&.alignfull {
+		img {
+			width: 100%;
+		}
+	}
 
-.wp-block-image .alignleft img,
-.wp-block-image .alignright img,
-.wp-block-image .alignleft figcaption,
-.wp-block-image .alignright figcaption {
-	max-width: 100%;
-	width: 100%;
 }
 
 /*--------------------------------------------------------------
 ## Latest Posts
 --------------------------------------------------------------*/
+ul.wp-block-latest-posts {
+	&.alignwide, &.alignfull, &.is-grid.alignwide, &.is-grid.alignfull {
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: $mobile-lr-padding;
+		padding-right: $mobile-lr-padding;
 
-ul.wp-block-latest-posts.alignwide,
-ul.wp-block-latest-posts.alignfull,
-ul.wp-block-latest-posts.is-grid.alignwide,
-ul.wp-block-latest-posts.is-grid.alignwide {
-	padding: rem-calc(0 16);
+		@include breakpoint(medium) {
+			padding-left: $desktop-lr-padding;
+			padding-right: $desktop-lr-padding;
+		}
+	}
 }
-
 /*--------------------------------------------------------------
 # List
 --------------------------------------------------------------*/
@@ -319,6 +307,18 @@ ul.is-style-two-column {
 }
 
 /*--------------------------------------------------------------
+## Media Text
+--------------------------------------------------------------*/
+// TODO: Let's style this out more and make variations using editor.js to match designs. Elimate need for custom Media Content block. 
+.wp-block-media-text {
+	// Overrides default padding from General Structure via specificity
+	.entry-content & {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/*--------------------------------------------------------------
 ## More
 --------------------------------------------------------------*/
 .more-link {
@@ -328,7 +328,6 @@ ul.is-style-two-column {
 /*--------------------------------------------------------------
 ## Navigation
 --------------------------------------------------------------*/
-
 .wp-block-navigation-link__label {
 	font-family: inherit;
 	color: #0073aa;
@@ -337,40 +336,33 @@ ul.is-style-two-column {
 /*--------------------------------------------------------------
 ## Pullquote
 --------------------------------------------------------------*/
-
-.wp-block-pullquote>p:first-child {
-	margin-top: 0;
+.wp-block-pullquote {
+	> p:first-child {
+		margin-top: 0;
+	}
 }
 
 /*--------------------------------------------------------------
 ## Quote
 --------------------------------------------------------------*/
-
 .wp-block-quote {
 	margin-left: rem-calc(16);
 	margin-right: rem-calc(16);
 	padding: 0;
-}
 
-.wp-block-quote > * {
-	margin-left: 1rem;
-}
+	> * {
+		margin-left: 1rem;
+	}
 
-.wp-block-quote.is-large, 
-.wp-block-quote.is-style-large {
-	margin: rem-calc(35) auto;
-	padding: 0;
-}
+	&.is-large, &.is-style-large {
+		margin: rem-calc(35) auto;
+		padding: 0;
 
-.wp-block-quote.is-large cite, 
-.wp-block-quote.is-large footer, 
-.wp-block-quote.is-style-large cite, 
-.wp-block-quote.is-style-large footer {
-	font-size: rem-calc(14);
-}
-
-@media screen and (min-width: 644px) {
-	.wp-block-quote {
+		cite, footer {
+			font-size: rem-calc(14);
+		}
+	}
+	@include breakpoint(medium) {
 		margin: rem-calc(35) auto;
 	}
 }
@@ -378,7 +370,6 @@ ul.is-style-two-column {
 /*--------------------------------------------------------------
 ## Separator
 --------------------------------------------------------------*/
-
 .wp-block-separator {
 	margin: 0 auto;
 	padding: 0;
@@ -388,7 +379,6 @@ ul.is-style-two-column {
 /*--------------------------------------------------------------
 ## Site Tagline
 --------------------------------------------------------------*/
-
 .wp-block-site-tagline {
 	margin-top: 0;
 }
@@ -396,7 +386,6 @@ ul.is-style-two-column {
 /*--------------------------------------------------------------
 ## Site Title
 --------------------------------------------------------------*/
-
 .wp-block-site-title {
 	margin-bottom: 0;
 }
@@ -404,34 +393,35 @@ ul.is-style-two-column {
 /*--------------------------------------------------------------
 ## Table
 --------------------------------------------------------------*/
-
 .wp-block-table {
 	overflow-x: auto;
-	margin-left: 1rem;
-	margin-right: 1rem;
-	width: calc( 100% - 2rem );
-}
 
-.wp-block-table table {
-	border-collapse: collapse;
-	width: 100%
-}
+	thead {
+		border: $table-border // Located in /app/_settings.scss
+	}
 
-.wp-block-table td, .wp-block-table th {
-	padding: .5em;
-}
+	td, th {
+		padding: $table-padding; // Located in /app/_settings.scss
+	}
 
-@media screen and (min-width: 608px) {
-	.wp-block-table {
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
+	&.is-style-stripes {
+		border-bottom: none;
+		td, th {
+			border-color: transparent;
+		}
+	}
+
+	figcaption {
+		font-size: rem-calc(14);
+		color: $gray-500;
 	}
 }
 
 /*--------------------------------------------------------------
 ## Video
 --------------------------------------------------------------*/
-.wp-block-video video {
-	max-width: $default-content-width;
+.wp-block-video {
+	video {
+		max-width: $default-content-width;
+	} 
 }
