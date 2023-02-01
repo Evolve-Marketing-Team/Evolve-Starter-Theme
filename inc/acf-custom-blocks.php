@@ -76,7 +76,7 @@ function evolve_starter_acf_blocks() {
 			'icon' 				=> 'id',
 			'align'				=> 'full',
 			'enqueue_assets' => function(){
-				wp_enqueue_style( 'team-cards', get_template_directory_uri() . '/template-parts/blocks/test-cards/team-cards.min.css' );
+				wp_enqueue_style( 'team-cards', get_template_directory_uri() . '/template-parts/blocks/team-cards/team-cards.min.css' );
 			},
         ));
 
