@@ -6,12 +6,13 @@ $narrow-content-width: rem-calc(640);
 $default-content-width: rem-calc(840);
 $wide-content-width: rem-calc(1100);
 
-// Container Padding (left and right) - This is mainly used for custom containers using Foundaation's include in _containers.scss
+// Container Padding (left and right) - This is mainly used for custom containers using Foundation's include in _containers.scss. If you change values, change individual padding below and values should be half.
 $container-desktop-lr-padding: rem-calc(40);
-$container-mobile-lr-padding: rem-calc(20);
+$container-mobile-lr-padding: rem-calc(30);
 
+// This individual padding is used as individual values. Used in _blocks.scss mainly. Use this to define any custom block padding to match global. If you modify this padding, make sure the container padding above is double the value. 
 $desktop-lr-padding: rem-calc(20);
-$mobile-lr-padding: rem-calc(10);
+$mobile-lr-padding: rem-calc(15);
 
 // Section Padding - Used for top/bottom section padding. 
 $section-padding__xs: rem-calc(40);

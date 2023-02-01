@@ -1,12 +1,12 @@
 "use strict";
 
-var $ = jQuery.noConflict(); // Fire All Foundation
+const $ = jQuery.noConflict(); // Fire All Foundation
 
 $(document).foundation(); // GDPR Cookie 
 
-var gdprCookie = Cookies.noConflict();
-var cookieFetch = gdprCookie.get('GDPR');
-var gdprBar = document.querySelector(".sticky-container"); // const gdprBtn = document.querySelector("#gdprAccept"); // Eventually convert to EventListener and remove onClick from button code. 
+const gdprCookie = Cookies.noConflict();
+const cookieFetch = gdprCookie.get('GDPR');
+const gdprBar = document.querySelector(".gdpr-sticky-container"); // const gdprBtn = document.querySelector("#gdprAccept"); // Eventually convert to EventListener and remove onClick from button code. 
 
 function gdprHide() {
   gdprBar.style.display = "none";
@@ -24,13 +24,13 @@ if (cookieFetch) {
 } // Navigation Menu Toggle
 
 
-var hamburger = document.querySelector('.hamburger');
-var mobileNav = document.querySelector('.mobile-navigation');
-var mobileButton = document.querySelector('#hamburgerMenu'); // Toggles mobile navigation open. Toggles mobile button aria-expanded attribute and changes out the button text. 
+const hamburger = document.querySelector('.hamburger');
+const mobileNav = document.querySelector('.mobile-navigation');
+const mobileButton = document.querySelector('#hamburgerMenu'); // Toggles mobile navigation open. Toggles mobile button aria-expanded attribute and changes out the button text. 
 
 function toggleNavMenu() {
   if (mobileNav) {
-    mobileButton.addEventListener('click', function () {
+    mobileButton.addEventListener('click', () => {
       mobileNav.classList.toggle('is-open');
       hamburger.classList.toggle('is-active'); // ADA - Sets aria lable on click.
 

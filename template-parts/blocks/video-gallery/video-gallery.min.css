@@ -1,7 +1,7 @@
 .video-gallery{padding-top:3.125rem;padding-bottom:3.125rem}
 .video-gallery__content-wrapper{text-align:center}
-.video-gallery__video{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:calc(100% - 1.25rem);margin-left:.625rem;margin-right:.625rem;margin-bottom:2.1875rem}
+.video-gallery__video{-webkit-box-flex:0;flex:0 0 auto;width:calc(100% - 1.25rem);margin-left:.625rem;margin-right:.625rem;margin-bottom:2.1875rem}
 .video-gallery__video .responsive-embed{background-color:#707070;border-radius:1.25rem}
 .video-gallery__video-title{display:block;font-weight:600;color:#000;text-align:center}
-@media print,screen and (min-width:40em){.video-gallery__video{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:calc(33.3333333333% - 1.875rem);margin-left:.9375rem;margin-right:.9375rem}
+@media print,screen and (min-width:40em){.video-gallery__video{-webkit-box-flex:0;flex:0 0 auto;width:calc(33.3333333333% - 1.875rem);margin-left:.9375rem;margin-right:.9375rem}
 }
