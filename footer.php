@@ -51,7 +51,9 @@
 
 		</div>
 
-		<div class="secondary-footer">
+	</div>
+	
+	<div class="secondary-footer">
 
 			<ul class="footer-site-info">
 
@@ -64,14 +66,11 @@
 
 				<li><a href="https://www.evolvemarketingteam.com" target="_blank" rel="noopener">An Evolve Marketing Team Web Solution</a></li>
 
-				<li>&copy; <?php echo date("Y"); ?> Company Name </li>
+				<li><span>&copy; <?php echo date("Y"); ?> Company Name</span></li>
 
 			</ul>
 
 		</div>
-
-	</div>
-	
 	
 </footer><!-- #colophon -->
 
