@@ -1,6 +1,5 @@
 # Evolve Starter Theme
-
-The Evolve Starter theme is designed to quickly start custom themes. This theme has some prebuilt ACF blocks that you can modify and adjust admin fields. This theme uses Foundation Framework, Hamburgers, and Slick. 
+The Evolve Starter theme is designed to quickly start custom themes. This theme has some prebuilt ACF blocks that you can modify and adjust admin fields. This theme uses Foundation Framework v6.7.5, Hamburgers, and Slick. 
 
 ## Install
 Clone this repo into your new client project. Once the repo is cloned, CD into the theme within the project and remove Git in order to prep the project into a new Git repo for the client project. 
@@ -16,6 +15,10 @@ To follow proper theme naming conventions and setup, you'll need to do the follo
 Comments are attached to the browsersync function, which will need modified based on your project. You'll need to modify the project URL/host in:
 1. gulpfile.babel.js
 2. wpgulp.config.js
+
+## Node & NPM
+Foundation requires Node v12.x.x - v14.x.x. This was tested with node v13.7.0 and npm v6.13.7. Please use NVM to switch your node version to v13.7.0. If you encounter a fibers error, run `npm install fibers` in the project. 
+
 
 To install all the dependencies, run `npm install` in theme directory. 
 
