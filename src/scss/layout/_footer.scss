@@ -193,3 +193,55 @@
 		text-decoration: none;
 	}
 }
+
+/*-------------------
+Back To Top
+-------------------*/
+.back-to-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	width: 45px;
+	height: 45px;
+	position: fixed;
+	z-index: 10;
+	right: 10px;
+	bottom: 60px;
+	font-size: rem-calc(11);
+	font-weight: normal;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: coral;
+	border-radius: 50%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity $ease-io-slow, visibility 0ms $ease-io-slow;
+
+	a {
+		text-decoration: none;
+		color: $white;
+		line-height: 1;
+
+		&::before {
+			content: "\64";
+			display: block;
+			color: $white;
+			font-family: $icon-font;
+			font-weight: normal;
+			font-size: rem-calc(20);
+			text-transform: none;
+		}
+	}
+
+	&.show {
+		visibility: visible;
+		opacity: 1;
+		transition-delay: 0ms;
+	}
+
+	@include breakpoint(64.0625em) {
+		right: 30px;
+		bottom: 50px;
+	}
+}
