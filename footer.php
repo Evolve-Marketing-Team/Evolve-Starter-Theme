@@ -61,10 +61,9 @@
 
 				<li><a href="<?php echo home_url('/terms-conditions'); ?>">Terms &amp; Conditions</a></li>
 
+				<li><a href="<?php echo home_url('/sitemap'); ?>">Sitemap</a></li>
 
-				<li><a href="<?php echo home_url('/site-map'); ?>">Site Map</a></li>
-
-				<li><a href="https://www.evolvemarketingteam.com" target="_blank" rel="noopener">An Evolve Marketing Team Web Solution</a></li>
+				<li><a href="https://www.evolvemarketingteam.com" target="_blank" rel="noopener">An Evolve Marketing Solution</a></li>
 
 				<li><span>&copy; <?php echo date("Y"); ?> Company Name</span></li>
 
@@ -75,7 +74,7 @@
 </footer><!-- #colophon -->
 
 <!-- Enable sticky by uncommenting within foundation-app.scss. REMOVE this comment after enabling -->
-<div class="gdpr-sticky-container" data-sticky-container>
+<!-- <div class="gdpr-sticky-container" data-sticky-container>
 	<div class="gdpr-bar sticky" data-sticky data-stick-to="bottom" data-margin-bottom="0" data-sticky-on="small">
 		<div class="container">
 			<div class="gdpr-inner">
@@ -84,9 +83,13 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
 </div><!-- #page -->
+
+<div id="back-to-top" class="back-to-top">
+	<a href="#page"><span class="screen-reader-text">Back to Top</span></a>
+</div>
 
 <?php wp_footer(); ?>
 
