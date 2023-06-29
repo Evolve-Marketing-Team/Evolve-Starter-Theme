@@ -1,10 +1,14 @@
+.accordion-section{display:-webkit-box;display:flex;-webkit-box-pack:center;justify-content:center}
 .accordion{width:100%}
-.accordion-item{border-bottom:1px solid #707070;margin-bottom:0}
-.accordion-item:last-child{border-bottom:0}
-.accordion-title{font-weight:700;font-size:1.375rem;text-decoration:none;color:#000;-webkit-transition:all .35s ease-in-out;transition:all .35s ease-in-out}
-.accordion-title::before{display:block;position:absolute;left:0;content:"";color:#000;font-family:"icon-font-family";margin-right:.9375rem;-webkit-transition:all .35s ease-in-out;transition:all .35s ease-in-out}
-.accordion-item.is-active>.accordion-title{color:#000}
-.accordion-item.is-active>.accordion-title:before{color:#000;-webkit-transform:rotate(90deg);transform:rotate(90deg)}
-@media print,screen and (min-width:40em){.accordion-title{font-size:1.875rem}
-.accordion-content{padding:1rem 4rem}
+.accordion__item{border-bottom:1px solid #707070;margin-bottom:0;padding-top:1.875rem;padding-bottom:1.875rem}
+.accordion__item:first-child>.accordion__title{padding-top:0}
+.accordion__item.is-active{border-bottom-color:coral;border-bottom-width:4px}
+.accordion__item.is-active>.accordion__title{color:coral}
+.accordion__item.is-active>.accordion__title:before{color:coral;-webkit-transform:rotate(135deg);transform:rotate(135deg)}
+.accordion__title{display:block;position:relative;font-weight:700;font-size:1.375rem;text-decoration:none;color:#000;padding-left:1rem;padding-right:4.375rem;-webkit-transition:all .35s ease-in-out;transition:all .35s ease-in-out}
+.accordion__title::before{display:block;position:absolute;right:0;content:"c";color:#000;font-family:"evolve-starter";font-weight:normal;margin-right:.9375rem;-webkit-transition:all .35s ease-in-out;transition:all .35s ease-in-out}
+.accordion__title:hover,.accordion__title:focus{color:coral}
+.accordion__title:hover::before,.accordion__title:focus::before{color:coral}
+.accordion__content{display:none;padding:1rem 4rem}
+@media print,screen and (min-width:40em){.accordion__title{font-size:1.875rem}
 }

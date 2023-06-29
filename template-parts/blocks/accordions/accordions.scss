@@ -3,56 +3,79 @@
 /*--------------------------------------------------------------
 # Accordions
 --------------------------------------------------------------*/
+.accordion-section {
+	display: flex;
+	justify-content: center;
+}
+
 .accordion {
+	$a: &;
 	width: 100%;
-}
 
-.accordion-item {
-	border-bottom: 1px solid $gray-400	;
-	margin-bottom: 0;
+	&__item {
+		border-bottom: 1px solid $gray-400	;
+		margin-bottom: 0;
 
-	&:last-child {
-		border-bottom: none;
-	}
-}
+		padding-top: app.rem-calc(30);
+		padding-bottom: app.rem-calc(30);
 
-.accordion-title {
-	font-weight: 700;
-	font-size: app.rem-calc(22);
-	text-decoration: none;
-	color: $black-400;
-	transition: all $ease-io-fast;
-	
-	&::before {
-		display: block;
-		position: absolute;
-		left: 0;
-		content: "\e901";
-		color: $black-400;
-		font-family: "icon-font-family";
-		margin-right: app.rem-calc(15);
-		transition: all $ease-io-fast;
-	}
+		&:first-child > #{$a}__title {
+			padding-top: 0;
+		}
 
-	@include app.breakpoint(medium) {
-		font-size: app.rem-calc(30);
-	}
-}
-
-.accordion-item.is-active {
-	> .accordion-title{
-		color: $black-400;
+		&.is-active {
+			border-bottom-color: coral;
+			border-bottom-width: 4px;
+			> #{$a}__title{
+				color: coral;
 
 
-		&:before {
-			color: $black-400;
-			transform: rotate(90deg);
+				&:before {
+					color: coral;
+					transform: rotate(135deg);
+				}
+			}
 		}
 	}
-}
 
-.accordion-content {
-	@include app.breakpoint(medium) {
+	&__title {
+		display: block;
+		position: relative;
+		font-weight: 700;
+		font-size: app.rem-calc(22);
+		text-decoration: none;
+		color: $black-400;
+		padding-left: 1rem;
+		padding-right: app.rem-calc(70);
+		transition: all $ease-io-fast;
+		
+		&::before {
+			display: block;
+			position: absolute;
+			right: 0;
+			content: "\63";
+			color: $black-400;
+			font-family: $icon-font;
+			font-weight: normal;
+			margin-right: app.rem-calc(15);
+			transition: all $ease-io-fast;
+		}
+
+		&:hover, &:focus {
+			color: coral;
+
+			&::before {
+				color: coral;
+			}
+		}
+
+		@include app.breakpoint(medium) {
+			font-size: app.rem-calc(30);
+		}
+	}
+
+	&__content {
+		display: none;
 		padding: 1rem 4rem;
 	}
 }

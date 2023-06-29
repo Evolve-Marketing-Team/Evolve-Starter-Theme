@@ -31,32 +31,28 @@ $className .= ' is-admin';
 
 <div class="<?php echo esc_attr($className); ?>" id="<?php echo esc_attr($id); ?>">
 
-	<div class="row align-center">
+	<?php if( have_rows( 'accordions' ) ) : ?>
 
-
-		<?php if( have_rows( 'accordions' ) ) : 
-			$i = 1;
+	<div class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true" data-slide-speed="500">
+		
+		<?php while( have_rows ( 'accordions') ) : the_row(); 
+			$title = get_sub_field('title');
+			$content  = get_sub_field('content');
 		?>
-		<ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true" data-slide-speed="500">
-			<?php while( have_rows ( 'accordions') ) : the_row(); 
-				$title = get_sub_field('title');
-				$content  = get_sub_field('content');
-			?>
-			<li class="accordion-item" data-accordion-item>
+		<div class="accordion__item" data-accordion-item>
 
-				<a href="#" class="accordion-title text-decoration-none"><?php echo esc_html($title); ?></a>
+			<a href="#" class="accordion__title"><?php echo esc_html($title); ?></a>
 
-				<div class="accordion-content" data-tab-content>
-					<?php echo $content; ?>
-				</div>
+			<div class="accordion__content" data-tab-content>
+				<?php echo $content; ?>
+			</div>
 
-			</li>
+		</div>
 
-			<?php $i++;
-			endwhile; ?>
+		<?php endwhile; ?>
 
-		</ul>
-		<?php endif; ?>
+	</div>
+	<?php endif; ?>
 
 	</div>
 
