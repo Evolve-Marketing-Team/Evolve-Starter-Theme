@@ -140,3 +140,26 @@ if ( ! function_exists( 'evolve_starter_entry_footer' ) ) :
 		);
 	}
 endif;
+
+/**
+ * Slug-friendly text converter. To use:
+ * <?php echo slugify_text($var); ?>
+ */
+if ( ! function_exists( 'slugify_text' ) ) : 
+    function slugify_text($text){
+        // Strip html tags
+        $text = strip_tags($text);
+        // remove unwanted characters
+        $text = preg_replace('~[^-\w]+~', '-', $text);
+        // trim
+        $text = trim($text, '-');
+        // remove duplicate -
+        $text = preg_replace('~-+~', '-', $text);
+        // lowercase
+        $text = strtolower($text);
+        if (empty($text)) {
+            return 'n-a';
+        }
+        return $text;
+    }
+endif;
